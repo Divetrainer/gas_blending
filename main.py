@@ -33,8 +33,8 @@ print("="*37+"Customer Tank Information"+"="*38)
 print("="*100)
 print()
 
-Tank.size = input("What size tank are you filling(cuft): ")
-Tank.max_pressure = input("What is the max working pressure(psi): ")
+Tank.size = int(input("What size tank are you filling(cuft): "))
+Tank.max_pressure = int(input("What is the max working pressure(psi): "))
 
 print("="*100)
 print()
@@ -67,7 +67,7 @@ print()
 print()
 request = 0
 while request < 21:
-    request = int(input("What percent Oxygen is requested:"))
+    request = float(input("What percent Oxygen is requested:"))
     if request < 21:
         print("Cannot create a lower than air O2 percentage, at this time. Please input a higher value")
 
@@ -75,7 +75,7 @@ while request < 21:
 
 o2_to_add = total_oxygen(request, Tank.max_pressure)
 
-air_to_add = int(Tank.max_pressure) - o2_to_add
+air_to_add = Tank.max_pressure - o2_to_add
 source_used = total_cuft(o2_to_add, Tank.max_pressure, Tank.size)
 
 
@@ -98,7 +98,7 @@ print()
 print("*"*39+"CUSTOMER PRINTOUT"+"*"*44)
 print(f"Total gas used is: {source_used} cuft")
 print(f"Percent filled to: {request}")
-print(f"Max Operating Depth(assuming a PPO2 of 1.4): {mod_04}")
-print(f"Contingency Depth(assuming a PPO2 of 1.6): {mod_06}")
+print(f"Max Operating Depth(assuming a PPO2 of 1.4): {mod_04}ft")
+print(f"Contingency Depth(assuming a PPO2 of 1.6): {mod_06}ft")
 print(f"Total Cost to the customer is: ${customer_total}")
 print("*"*100)

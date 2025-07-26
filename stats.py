@@ -1,13 +1,13 @@
 def total_oxygen(requested_o2, tank_max_pressure):
-    o2_normalized = float(requested_o2 / 100)
+    o2_normalized = (requested_o2 / 100)
     o2_fill_to = ((o2_normalized - .21) / .79 ) * float(tank_max_pressure)
     return int(o2_fill_to)
 
 
 def total_cuft(o2_added, tank_max_pressure, tank_size):
-    if int(o2_added) == 0:
+    if o2_added == 0:
         o2_added = 1
-    volume = (int(o2_added) / int(tank_max_pressure)) * int(tank_size)
+    volume = (o2_added / tank_max_pressure) * tank_size
     return volume
 
 def cost_per_cuft(cuft_total, total_cost):
