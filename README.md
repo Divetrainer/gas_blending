@@ -16,9 +16,20 @@ Please note, mixing any high pressure cylinders should be done with care and in 
 
 Any attempts to blend gas using the ratios here while not trained in gas blending techniques can lead to serious injury. 
 
+
+How to run program:
+clone the repository and call main.py
+answer the prompts to get the answers
+
+default answers to help the non-diving user:
+80cuft tank
+3000psi
+32 or 36 %O2 is a standard for diving
+
+
+
 future plans:
-    UI 
-    Trimix Compatibility
-    PPO2 input 
-    MOD input and gas blend suggestion output
-    
+    - UI 
+    - Trimix Compatibility
+    - PPO2 input 
+    - MOD input and gas blend suggestion output
