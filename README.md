@@ -16,3 +16,9 @@ Please note, mixing any high pressure cylinders should be done with care and in 
 
 Any attempts to blend gas using the ratios here while not trained in gas blending techniques can lead to serious injury. 
 
+future plans:
+    UI 
+    Trimix Compatibility
+    PPO2 input 
+    MOD input and gas blend suggestion output
+    
