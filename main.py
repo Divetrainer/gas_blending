@@ -1,4 +1,4 @@
-from stats import total_oxygen, total_cuft, cost_per_cuft
+from stats import total_oxygen, total_cuft, cost_per_cuft, max_operating_depth, contingency_max
 
 class Tank:
     def __init__(self, size, max_pressure):
@@ -85,7 +85,8 @@ customer_total = source_cost * Source_Tank.user_markup
 source_used = "%.2f" % source_used
 source_cost = "%.2f" % source_cost
 customer_total = "%.2f" % customer_total
-
+mod_04 = max_operating_depth(request)
+mod_06 = contingency_max(request)
 
 print()
 print("*"*39+"GAS BLEND REQUIREMENTS"+"*"*39)
@@ -94,8 +95,10 @@ print(f"Add {air_to_add} psi of clean air to top off the mixture")
 print(f"Once the tank has cooled, please validate O2 percent is {request}")
 print("*"*100)
 print()
-print("*"*39+"GAS COST PRINTOUT"+"*"*44)
+print("*"*39+"CUSTOMER PRINTOUT"+"*"*44)
 print(f"Total gas used is: {source_used} cuft")
-#print(f"Total gas cost is: ${source_cost}")
+print(f"Percent filled to: {request}")
+print(f"Max Operating Depth(assuming a PPO2 of 1.4): {mod_04}")
+print(f"Contingency Depth(assuming a PPO2 of 1.6): {mod_06}")
 print(f"Total Cost to the customer is: ${customer_total}")
 print("*"*100)

@@ -13,3 +13,13 @@ def total_cuft(o2_added, tank_max_pressure, tank_size):
 def cost_per_cuft(cuft_total, total_cost):
     cost_cuft = total_cost / cuft_total
     return cost_cuft
+
+def max_operating_depth(request):
+    o2_normalized = float(request/100)
+    max_depth = 33 * ((1.4/(o2_normalized)) - 1 )
+    return int(max_depth)
+
+def contingency_max(request):
+    o2_normalized = float(request/100)
+    cont_depth = 33 * ((1.6/(o2_normalized)) - 1 )
+    return int(cont_depth)
