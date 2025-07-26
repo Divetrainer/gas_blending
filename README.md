@@ -30,14 +30,15 @@ clone the repository and call main.py within the source folder
 answer the prompts provided. if you do not have any background in diving, please refer below to standard tank size and oxygen blend.
 
 <h3>default answers:</h3>
+
 - 80cuft tank
 - 3000psi
 - 32 or 36 %O2 is a standard for diving
 
 
+<h3> Future Plans </h3>
 
-- future plans:
-    * UI 
+    * better UI 
     * Trimix Compatibility
-    * PPO2 input 
-    * MOD input and gas blend suggestion output
+    * PPO2 adjustment 
+    * MOD input and gas blend suggestion
