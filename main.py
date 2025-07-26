@@ -8,7 +8,6 @@ class Tank:
 
 class Source_Tank:
     def __init__(self, size, max_pressure, cost, user_markup):
-    def __init__(self, size, max_pressure, cost, user_markup):
         self.size = size
         self.max_pressure = max_pressure
         self.cost = cost
