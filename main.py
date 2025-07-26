@@ -1,4 +1,5 @@
 from stats import total_oxygen, total_cuft, cost_per_cuft
+from stats import total_oxygen, total_cuft, cost_per_cuft
 
 class Tank:
     def __init__(self, size, max_pressure):
@@ -6,6 +7,7 @@ class Tank:
         self.max_pressure = max_pressure
 
 class Source_Tank:
+    def __init__(self, size, max_pressure, cost, user_markup):
     def __init__(self, size, max_pressure, cost, user_markup):
         self.size = size
         self.max_pressure = max_pressure
@@ -38,6 +40,8 @@ Tank.max_pressure = input("What is the max working pressure(psi): ")
 
 print("="*100)
 print()
+print("="*100)
+print()
 
 check = True
 while check == True:
@@ -47,16 +51,21 @@ while check == True:
         print("Please clean and drain the tank appropriately")
         print("Do not drain too fast, condensation will build, please drain no faster than 100psi a minute")
         print("="*100)
+        print("Do not drain too fast, condensation will build, please drain no faster than 100psi a minute")
+        print("="*100)
         check = True
     elif clean_check.lower() == "y" or clean_check.lower() == "yes":
         check = False
+        print("="*100)
         print("="*100)
         break
     else:
         print("Please input a 'y' or 'yes' if the tank is cleaned or a 'n' or 'no' if it is empty.")
         print("="*100)
+        print("="*100)
         check = True
 
+print()
 print()
 request = 0
 while request < 21:
