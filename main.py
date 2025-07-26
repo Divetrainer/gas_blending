@@ -4,14 +4,20 @@ class Tank:
     def __init__(self, size, max_pressure):
         self.size = size
         self.max_pressure = max_pressure
+
+class Source_Tank:
+    def __init__(self, size, max_pressure, cost):
+        self.size = size
+        self.max_pressure = max_pressure
+        self.cost = cost
     
 Tank.size = input("What size tank are you using(cuft): ")
 Tank.max_pressure = input("What is the max working pressure(psi): ")
 
-print(f"Please make sure that your {Tank.size}cuft {Tank.max_pressure}psi tank is cleaned and properly drained")
 
 check = True
 while check == True:
+    print(f"Please make sure that your {Tank.size}cuft {Tank.max_pressure}psi tank is cleaned and properly drained")
     clean_check = input("Is it drained and cleaned(y/n): ")
     if clean_check.lower() == "n" or clean_check.lower() == "no":
         print("Please clean and drain the tank appropriately")
@@ -24,7 +30,14 @@ while check == True:
         print("Please input a 'y' or 'yes' if the tank is cleaned or a 'n' or 'no' if it is empty.")
         check = True
 
-request = int(input("What percent Oxygen is requested:"))
+# create a check to make sure an int is pushed not a float or double
+request = 0
+while request < 21:
+    request = int(input("What percent Oxygen is requested:"))
+    if request < 21:
+        print("Cannot create a lower than air O2 percentage, at this time. Please input a higher value")
+
+
 
 o2_to_add = total_oxygen(request, Tank.max_pressure)
 
