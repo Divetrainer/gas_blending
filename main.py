@@ -26,7 +26,6 @@ class Source_Tank:
         size = 120
         user_markup = 1.5
         
-
 print()
 print("="*100)
 print("="*37+"Customer Tank Information"+"="*38)
