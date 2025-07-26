@@ -29,6 +29,9 @@ Always validate any math that you yourself do not understand, make sure the MOD 
 clone the repository and call main.py within the source folder
 answer the prompts provided. if you do not have any background in diving, please refer below to standard tank size and oxygen blend.
 
+<img width="959" height="717" alt="image" src="https://github.com/user-attachments/assets/631b8567-c487-4c76-a71a-d3510cb3cbc7" />
+
+
 <h3>default answers:</h3>
 
 - 80cuft tank
