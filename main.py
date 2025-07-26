@@ -14,7 +14,7 @@ class Source_Tank:
     print("="*100)
     print("="*37+"DiveCenter Tank Information"+"="*36)
     print("="*100)
-    print("for defaults please see Defaults.md")
+    print("For defaults please see the Defaults.md file")
     initalize = input("Would you like to change the default gas cost? ")
     if initalize.lower() == 'y' or initalize.lower() == 'yes':
         size = int(input("how many cuft is the source cylinder: "))
@@ -24,6 +24,7 @@ class Source_Tank:
     else:
         max_pressure = 2400
         size = 120
+        cost = 100.00
         user_markup = 1.5
         
 print()
@@ -71,7 +72,7 @@ air_to_add = int(Tank.max_pressure) - o2_to_add
 source_used = total_cuft(o2_to_add, Tank.max_pressure, Tank.size)
 
 
-source_cost = cost_per_cuft(Source_Tank.size, Source_Tank.size) * source_used
+source_cost = cost_per_cuft(Source_Tank.size, Source_Tank.cost) * source_used
 customer_total = source_cost * Source_Tank.user_markup
 
 source_used = "%.2f" % source_used
@@ -89,5 +90,5 @@ print()
 print("*"*39+"GAS COST PRINTOUT"+"*"*44)
 print(f"Total gas used is: {source_used} cuft")
 #print(f"Total gas cost is: ${source_cost}")
-print(f"Total Cost to the customer is: ${customer_total}")
+print(f"Total Cost to the customer is: ${customer_total}USD")
 print("*"*100)
