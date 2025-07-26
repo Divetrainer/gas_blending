@@ -1,5 +1,4 @@
 from stats import total_oxygen, total_cuft, cost_per_cuft
-from stats import total_oxygen, total_cuft, cost_per_cuft
 
 class Tank:
     def __init__(self, size, max_pressure):
