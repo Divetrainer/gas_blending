@@ -41,7 +41,8 @@ answer the prompts provided. if you do not have any background in diving, please
 
 <h3> Future Plans </h3>
 
-    * better UI 
+    * better UI
+    * Web/App Integration 
     * Trimix Compatibility
     * PPO2 adjustment 
     * MOD input and gas blend suggestion
