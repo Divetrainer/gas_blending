@@ -5,16 +5,32 @@ class Tank:
         self.size = size
         self.max_pressure = max_pressure
 
-class Source_Tank:
+class Bank_Tank(Tank):
     def __init__(self, size, max_pressure, cost, user_markup):
-        self.size = size
-        self.max_pressure = max_pressure
-        self.cost = cost
-        self.usercost = user_markup
+        super().__init__(size, max_pressure)
+        self.__cost = cost
+        self.__user.markup = user_markup
+    
+    def generate_user_markup(self, user_markup):
+        # create a way to have a static markup or allow it to be changed
+        pass
+
+    def cost_per_tank(self, cost):
+        # this will take the value of the fill and create a cost per cuft return value 
+        pass
+    
+class Customer_Tank(Tank):
+    def __init__(self, size, max_pressure):
+        super().__init__(size, max_pressure)
+        
+
+
+    # this will need to be a seperate section, maybe to allow multiple paths
     print("="*100)
     print("="*37+"DiveCenter Tank Information"+"="*36)
     print("="*100)
     print("for defaults please see Defaults.md")
+    
     initalize = input("Would you like to change the default gas cost? ")
     if initalize.lower() == 'y' or initalize.lower() == 'yes':
         size = int(input("how many cuft is the source cylinder: "))
@@ -25,7 +41,7 @@ class Source_Tank:
         max_pressure = 2400
         size = 120
         user_markup = 1.5
-        
+    #########################################
 
 print()
 print("="*100)
@@ -79,14 +95,18 @@ air_to_add = Tank.max_pressure - o2_to_add
 source_used = total_cuft(o2_to_add, Tank.max_pressure, Tank.size)
 
 
-source_cost = cost_per_cuft(Source_Tank.size, Source_Tank.size) * source_used
-customer_total = source_cost * Source_Tank.user_markup
+source_cost = cost_per_cuft(Bank_Tank.size, Bank_Tank.size) * source_used
+customer_total = source_cost * Bank_Tank.user_markup
 
 source_used = "%.2f" % source_used
 source_cost = "%.2f" % source_cost
 customer_total = "%.2f" % customer_total
 mod_04 = max_operating_depth(request)
 mod_06 = contingency_max(request)
+
+
+###eventually I would like to be able to print this out to a receipt printer. will have to look into that for next time
+
 
 print()
 print("*"*39+"GAS BLEND REQUIREMENTS"+"*"*39)
