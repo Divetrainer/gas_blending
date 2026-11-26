@@ -1,4 +1,11 @@
-from stats import total_oxygen, total_cuft, cost_per_cuft, max_operating_depth, contingency_max
+from stats import (
+    contingency_max,
+    cost_per_cuft,
+    max_operating_depth,
+    total_cuft,
+    total_oxygen,
+)
+
 
 class Tank:
     def __init__(self, size, max_pressure):
@@ -28,24 +35,6 @@ class Customer_Tank(Tank):
         super().__init__(size, max_pressure)
 
 
-###
-    # this will need to be a seperate section, maybe to allow multiple paths
-#    print("="*100)
-#    print("="*37+"DiveCenter Tank Information"+"="*36)
-#    print("="*100)
-#    print("for defaults please see Defaults.md")
-
-#    initalize = input("Would you like to change the default gas cost? ")
-#    if initalize.lower() == 'y' or initalize.lower() == 'yes':
-#        size = int(input("how many cuft is the source cylinder: "))
-#        max_pressure = int(input("what is the psi of this cylinder: "))
-#        cost = float(input("What was the total cost, in USD, for this fill: "))
-#        user_markup = float(input("what is the markup: "))
-        #    else:
-#        max_pressure = 2400
-#        banksize = 120
-#        user_markup = 1.5
-    #########################################
 
 print()
 print("="*100)
@@ -98,10 +87,9 @@ o2_to_add = total_oxygen(request, Tank.max_pressure)
 air_to_add = Tank.max_pressure - o2_to_add
 source_used = total_cuft(o2_to_add, Tank.max_pressure, Tank.size)
 
-banksize = 120
-user_markup = 1.5
-source_cost = cost_per_cuft(banksize, 1) * source_used
-customer_total = source_cost * user_markup
+
+source_cost = cost_per_cuft(120, 50) * source_used ##cost is bulk tank size and price to fill
+customer_total = source_cost * 1.5 ##user markup
 
 source_used = "%.2f" % source_used
 source_cost = "%.2f" % source_cost

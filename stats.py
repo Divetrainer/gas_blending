@@ -3,7 +3,6 @@ def total_oxygen(requested_o2, tank_max_pressure):
     o2_fill_to = ((o2_normalized - .21) / .79 ) * float(tank_max_pressure)
     return int(o2_fill_to)
 
-
 def total_cuft(o2_added, tank_max_pressure, tank_size):
     if o2_added == 0:
         o2_added = 1
